@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyWhiskyApp.Views.AboutPage"
+             xmlns:vm="clr-namespace:MyWhiskyApp.ViewModels"
+             Title="{Binding Title}">
+    
+    <ContentPage.BindingContext>
+        <vm:AboutViewModel />
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="MainAccent">#F2A26A</Color>
+            <Color x:Key="SecondaryAccent">#FFEDE1</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <StackLayout BackgroundColor="{StaticResource MainAccent}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                <ContentView Padding="0,30,0,30" VerticalOptions="FillAndExpand">
+                    <Image Source="my_whisky_logo.png" VerticalOptions="Center" HeightRequest="86" />
+                </ContentView>
+            </StackLayout>
+        </StackLayout>
+        <ScrollView Grid.Row="1">
+            <StackLayout BackgroundColor="{StaticResource SecondaryAccent}" Orientation="Vertical" Padding="30,24,30,24" Spacing="10">
+                <Label Text="Welcome to MyWhisky!" FontSize="Title"/>
+                <Label Text="This app contains reviews and ratings of popular alcoholic beverages. From Ballantines to Macallan." FontSize="16" Padding="0,0,0,0"/>
+                <Label FontSize="16" Padding="0,24,0,0">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <FormattedString.Spans>
+                                <Span Text="Project by Daniel Klata "/>
+                                <Span Text="made for Window and Mobile Applications course." FontAttributes="Bold"/>
+                            </FormattedString.Spans>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <ContentView Padding="0,0,0,0" VerticalOptions="FillAndExpand">
+                    <Image Source="cheers.png" VerticalOptions="Center" HeightRequest="250" />
+                </ContentView>
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+
+</ContentPage>

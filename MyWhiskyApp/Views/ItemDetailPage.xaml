@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyWhiskyApp.Views.ItemDetailPage"
+             Title="{Binding Title}">
+    <Grid>
+        <ScrollView>
+            <StackLayout Spacing="15" Padding="15" HorizontalOptions="Fill">
+                <Label Text="Name:" FontSize="Medium"/>
+                <Label Text="{Binding Text}" FontSize="Large"/>
+                <Label Text="Description:" FontSize="Medium" />
+                <Label Text="{Binding Description}" FontSize="Small"/>
+                <Image Source="{Binding ImageName}" VerticalOptions="Center" HeightRequest="340" />
+                <Button VerticalOptions="Center" Text="Delete" Clicked="OnButtonClicked"/>
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>
